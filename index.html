@@ -14,7 +14,7 @@
 
 <script>
 	for(var i=1; i<=100; i++ ){
-		console.log(i);
+	
 		var project = document.createElement('a');
 		project.classList = 'card pending';
 
@@ -23,6 +23,16 @@
 			project.setAttribute('href',"./day"+i+"/index.html");
 			project.style.backgroundImage = "url(./d"+i+".png)";
 			project.classList = "card";
+			var gif = document.createElement('img');
+			gif.classList = "preview";
+			gif.setAttribute("src","./d"+i+".gif");
+			project.appendChild(gif);
+
+			gif.onerror = function(x){
+			  // image not found or change src like this as default image:
+			  	this.style.display="none";
+			   //im.src = 'new path';
+			};
 		}
 		var text = document.createElement('div');
 		text.classList = "text";
