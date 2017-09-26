@@ -1,0 +1,35 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>100 days of prototyping</title>
+	<link href='./master.css' rel='stylesheet' type='text/css'>
+
+</head>
+<body>
+	<div class="gridContainer">
+		<h1>100 Days of Prototyping</h1>	
+	</div>
+</body>
+
+<script>
+	for(var i=1; i<=100; i++ ){
+		console.log(i);
+		var project = document.createElement('a');
+		project.classList = 'card pending';
+
+		if(i<=2)
+		{
+			project.setAttribute('href',"./day"+i+"/index.html");
+			project.style.backgroundImage = "url(./d"+i+".png)";
+			project.classList = "card";
+		}
+		var text = document.createElement('div');
+		text.classList = "text";
+		text.innerHTML = "Day "+i ;
+		project.appendChild(text);
+		document.querySelector(".gridContainer").appendChild(project);
+	}
+	
+</script>
+</html>

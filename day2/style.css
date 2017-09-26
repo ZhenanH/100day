@@ -1,0 +1,453 @@
+body{
+      display:flex;
+      flex-direction: column;
+      user-select:none;
+      font-family: "Precision Sans", "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+      margin: 0;
+    }
+
+    h1{
+    text-align: center;
+    margin:2em;
+    display: none
+  }
+
+    .mobile-stage{
+      width:100vw;
+      height:100vh;
+      margin:0;
+      align-items: center;
+      overflow-x: hidden;
+      overflow-y: hidden;
+      
+    }
+
+    .screen {
+      width:calc(100% - 2px);
+      height:100%;
+      overflow-x: hidden;
+      overflow-y: scroll;
+      border:1px solid #eee;
+    }
+
+    @media(min-width: 600px) {
+      .mobile-stage {
+        width:414px;
+        height:736px;
+        margin-left:auto;
+        margin-right:auto;
+      }
+
+      h1{
+        display: block;
+      }
+
+      .screen {
+        height:calc(100% - 2px);
+      }
+     
+    }
+
+    
+
+     .container {
+      background-image: url("./bird.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      position: relative;
+
+    }
+
+    .appbar{
+      height:96px;
+      display: flex;
+      flex-direction: row;
+      color:white;
+      position: relative;
+    }
+
+    .appbar i{
+      z-index: 2;
+      font-size: 1.5em;
+      align-items: center;
+      display: flex;
+      margin-left: 5%;
+    }
+
+    .appbar span{
+      color:white;
+      font-size: 1.2em;
+      align-items: center;
+      display: flex;
+      margin-left: 2%;
+      top: 2px;
+      position: relative;
+    }
+
+     .appbar::before {
+      position: absolute;
+      content:"";
+      display: block;
+      width:100%;
+      height:100%;
+      background-color: rgba(0,0,0,0.3);
+    }
+
+    .hero::before {
+      content:"";
+      display: block;
+      width:100%;
+      height:100%;
+      background-color: rgba(0,0,0,0.3);
+    }
+
+    .hero{
+      height:300px;
+      position: relative;
+    }
+
+     .hero .portrait{
+      position: absolute;
+      top:10%;
+      left:10%;
+      width:80px;
+      height:80px;
+      border-radius: 50%;
+      border:1px solid #eee;
+      background-color: rgba(255,255,255,0.5);
+      background-image: url("./designer.png");
+      background-size: contain;
+    }
+
+    .hero .title{
+      position: absolute;
+      top:11%;
+      left:35%;
+      color:white;
+    }
+
+    .hero .title h2{
+      margin-top:10px;
+      margin-bottom: 10px;
+    }
+
+    .hero .title span{
+      color:rgba(255,255,255,0.6);
+    }
+
+    .hero i{
+      color:rgba(255,255,255,0.7);
+      pointer-events: none;
+      cursor: pointer;
+      font-size: 1.2em;
+
+    }
+
+    .hero i.fa-check-square-o, .hero i.fa-bolt, .hero i.fa-clock-o, .hero i.fa-exclamation-circle{
+      position: absolute;
+      bottom: 0%;
+      right: 12%;
+      z-index: 100;
+      width:25px;
+      height:25px;
+      opacity:0;
+      transition: transform 300ms ease-out, opacity 100ms;
+
+    }
+
+    .hero i.fa-check-square-o.active{
+     transform: translate(0, -60px);
+     opacity:1;
+     pointer-events:auto;
+    }
+
+
+    .hero i.fa-bolt.active{
+     transform: translate(calc(-60px * 0.86),calc(-60px / 2));
+     opacity:1;
+     pointer-events:auto;
+
+    }
+
+    .hero i.fa-clock-o.active{
+     transform: translate(calc(-60px * 0.86),calc(60px / 2));
+     opacity:1;
+     pointer-events:auto;
+
+    }
+
+    .hero i.fa-exclamation-circle.active{
+     transform: translate(0,60px);
+     opacity:1;
+     pointer-events:auto;
+    }
+
+
+
+    .hero .menu-button{
+      position: absolute;
+      bottom:-5%;
+      right:8%;
+      width:64px;
+      height:64px;
+      border-radius: 50%;
+      z-index: 99;
+      background-color: rgba(127, 22, 71,1);
+      cursor: pointer;
+      will-change:transform opacity;
+      transform: scale(1);
+      opacity: 1;
+      transition: all 100ms ease-out;
+    }
+
+
+    .hero .menu-button.active {
+      animation-name: expend;
+      animation-duration: 500ms; 
+      transform: scale(3);
+      opacity: 1;
+      will-change:transform opacity;
+    }
+
+    @keyframes expend {
+      0% {
+        transform: scale(1);
+        opacity: 0.8;
+      }
+
+      50% {
+        transform: scale(3.2);
+        opacity: 0.6;
+      }
+    
+
+      50% {
+        transform: scale(3.2);
+        opacity: 0.7;
+      }
+
+      85% {
+        transform: scale(3);
+        opacity: 0.8;
+      }
+
+      90% {
+        transform: scale(3.1);
+        opacity: 0.9;
+      }
+
+      100% {
+        transform: scale(3);
+        opacity: 1;
+      }
+    } 
+
+    .content{
+      height:300px;
+      position: relative;
+      background-color: white;
+    }
+    .content::before {
+      content:"";
+      background-color: white;
+      transform:rotate(12deg);
+      transform-origin: 3% 0;
+      top: -110px;
+      left: -110px;
+      width: 150%;
+      height: 150px;
+      position: absolute;
+    }
+
+    .more{
+      display: flex;
+      flex-direction: row;
+      margin-right: 5%;
+    }
+
+    .more i{
+      font-size: 0.8em;
+    }
+
+    .toggle-menu{
+      position: absolute;
+      bottom:-5%;
+      right:8%;
+      width:64px;
+      height:64px;
+      border-radius: 50%;
+      z-index: 99;
+      background-color: rgba(127, 22, 71,1);
+      cursor: pointer;
+
+    }
+
+     .toggle-menu:hover {
+
+      background-color: rgba(137, 32, 81,1);
+
+    }
+
+    .toggle-menu-bar{
+      cursor: pointer;
+      pointer-events: none;
+      width: 18px;
+      height: 2px;
+      background: #fff;
+      position: relative;
+      top: 32px;
+      margin: 0 auto;
+      transition: all 0.35s;
+    }
+
+    .toggle-menu-bar:before,
+    .toggle-menu-bar:after {
+      cursor: pointer;
+      pointer-events: none;
+      height: 2px;
+      background: #fff;
+      content: '';
+      position: absolute;
+      transition: all 0.35s;
+    }
+
+    .toggle-menu-bar:before {
+      top: -8px;
+      width:28px;
+      transform:translateX(-5px);
+    }
+
+    .toggle-menu-bar:after {
+      top: 8px;
+      width:8px;
+      transform:translateX(5px);
+    }
+
+    .toggle-menu.active{
+      background-color: rgba(79, 13, 44,1);
+    }
+
+    .toggle-menu.active .toggle-menu-bar{
+      background-color: inherit;
+      
+    }
+
+    .toggle-menu.active .toggle-menu-bar:before{
+      top:0;
+      transform: rotate(45deg);
+      width: 20px;
+    }
+
+    .toggle-menu.active .toggle-menu-bar:after {
+      top:0;
+      transform: rotate(-45deg);
+      width: 20px;
+    }
+
+    .timeline{
+      border-left: 2px solid #eee;
+      height:650px;
+      top:314px;
+      left:10%;
+      position: absolute;
+    }
+
+
+    .tasks{
+      position: absolute;
+      top:380px;
+      width:80%;
+      padding-left:20%;
+      
+    }
+
+    .tasks h2{
+      color:#333;
+    }
+
+    .tasks .time{
+      color:lightgray;
+    }
+
+    ::-webkit-scrollbar {
+    width: 0px;  /* remove scrollbar space */
+    background: transparent;  /* optional: just make scrollbar invisible */
+    }
+    /* optional: show position indicator in red */
+    ::-webkit-scrollbar-thumb {
+        background: #FF0000;
+    }
+
+    .task {
+      display: flex;
+      flex-flow: row wrap;
+      padding-top: 6%;
+
+      position: relative;
+      transition: all 200ms ease-out;
+      max-height: 48px;
+      overflow:visible;
+      opacity: 1;
+    }
+
+    .taskName {
+      color:#333;
+      width:80%;
+    }
+
+    .taskTime {
+      width:20%;
+      color:lightgray;
+    }
+
+    .taskType{
+      color:lightgray;
+      width: 100%;
+      padding: 5px 0 5px 0;
+    }
+
+    .dot {
+      position: absolute;
+      left:-14%;
+      top:34%;
+      width:12px;
+      height:12px;
+      border-radius: 50%;
+   
+
+    }
+
+    .dot.done {
+      background-color: rgb(70, 214, 170);
+
+    }
+
+    .dot.normal {
+      background-color: rgb(237, 212, 28);
+    }
+
+    .dot.expiring {
+      background-color: rgb(237, 73, 28);
+    }
+
+    .task.filterNotDone, .task.filterNotNormal, .task.filterNotExpiring {
+      overflow:hidden;
+      max-height: 0px;
+      padding:0;
+      transition: all 200ms ease-out;
+      opacity: 0;
+    }
+
+    .enable {
+      color:rgba(255,255,255,1) !important;
+    }
+
+   
+
+
+
+    
+
+    
+
+  
