@@ -1,0 +1,72 @@
+body{
+      display:flex;
+      flex-direction: column;
+      user-select:none;
+      font-family: "Precision Sans", "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+      margin: 0;
+    }
+
+    h1{
+    text-align: center;
+    margin:2em;
+    display: none
+  }
+
+    .mobile-stage{
+      width:100vw;
+      height:100vh;
+      margin:0;
+      align-items: center;
+      overflow-x: hidden;
+      overflow-y: hidden;
+      
+    }
+
+    .screen {
+      width:calc(100% - 2px);
+      height:100%;
+      overflow-x: hidden;
+      overflow-y: scroll;
+      border:1px solid #eee;
+    }
+
+    @media(min-width: 600px) {
+      .mobile-stage {
+        width:414px;
+        height:736px;
+        margin-left:auto;
+        margin-right:auto;
+      }
+
+      h1{
+        display: block;
+      }
+
+      .screen {
+        height:calc(100% - 2px);
+      }
+     
+    }
+
+    
+
+     .container {
+      background-image: url("./bird.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      position: relative;
+
+    }
+
+   
+
+   
+   
+
+
+
+    
+
+    
+
+  
