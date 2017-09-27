@@ -89,10 +89,10 @@ function generateParticles(){
     drawParticlte(p.x,p.y,p.radius,p.color,p.ctx);
     
     p.vx += 0.05;
-    p.x += 0.1*Math.sin(p.vx);
+    p.x += 0.3*Math.sin(p.vx);
 
     p.vy += 0.05;
-    p.y += 0.1*Math.sin(p.vy);
+    p.y += 0.3*Math.sin(p.vy);
 
     p.color = "hsla("+(Math.sin(p.vy*0.1)+1)*180+", 80%, 50%, "+(0.25*(Math.sin(p.vx*0.1)+1)+0.2)+")";
     //p.radius = (Math.sin(p.vy)+1)*2;

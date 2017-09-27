@@ -21,11 +21,11 @@
 		if(i<=3)
 		{
 			project.setAttribute('href',"./day"+i+"/index.html");
-			project.style.backgroundImage = "url(./d"+i+".png)";
+			project.style.backgroundImage = "url(./day"+i+"/d"+i+".png)";
 			project.classList = "card";
 			var gif = document.createElement('img');
 			gif.classList = "preview";
-			gif.setAttribute("src","./d"+i+".gif");
+			gif.setAttribute("src","./day"+i+"/d"+i+".gif");
 			project.appendChild(gif);
 
 			gif.onerror = function(x){

@@ -6,13 +6,19 @@ body{
       margin: 0;
     }
 
+    a{
+      text-decoration: none;
+      color:gray;
+    }
+
     h1{
     text-align: center;
     margin:2em;
     display: none
   }
 
-    .mobile-stage{
+    .mobile-stage,  .credit{
+      
       width:100vw;
       height:100vh;
       margin:0;
@@ -22,6 +28,8 @@ body{
       
     }
 
+
+
     .screen {
       width:calc(100% - 2px);
       height:100%;
@@ -30,8 +38,20 @@ body{
       border:1px solid #eee;
     }
 
+    .credit{
+      margin-top: 48px;
+    }
+
+    .credit img{
+      width:100%;
+    }
+
+    .credit div {
+      margin: 15px 0 0 0;
+    }
+
     @media(min-width: 600px) {
-      .mobile-stage {
+      .mobile-stage, .credit{
         width:414px;
         height:736px;
         margin-left:auto;
