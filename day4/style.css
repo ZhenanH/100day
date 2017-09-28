@@ -17,6 +17,13 @@ body{
     display: none
   }
 
+   ::-webkit-scrollbar {
+    width: 0px;  /* remove scrollbar space */
+    background: transparent;  /* optional: just make scrollbar invisible */
+    }
+
+
+
     .mobile-stage,  .credit{
       
       width:100vw;
@@ -71,13 +78,53 @@ body{
     
 
      .container {
-      background-image: url("./bird.jpg");
-      background-size: cover;
-      background-repeat: no-repeat;
+      background: linear-gradient(rgb(158, 189, 237), rgb(22, 153, 224));
+      width: 100%;
+      height:100%;
+      position: relative;
+      color:white;
+
+
+    }
+
+    .appbar {
+      height:48px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      padding:18px;
+    }
+
+    .appbar span {
+      flex:1;
+      text-align: center;
+    }
+
+    .intro{
+      height:30%;
+    }
+
+    .taskCards{
+      height:55%;
+      overflow:hidden;
+    }
+
+    .cards{
+      height:100%;
+      width: calc(320% + 48px);
       position: relative;
 
     }
 
+    .card{
+      float:left;
+      background-color: white;
+      border-radius: 10px;
+      width:calc(25% - 12px);
+      height:90%;
+      margin:0 6px 0 6px;
+      box-shadow: 0px 10px 20px #555;
+    }
    
    
 

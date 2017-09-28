@@ -12,6 +12,11 @@ body{
 
     }
 
+    a{
+      text-decoration: none;
+      color:gray;
+    }
+
 
     @media(min-width: 600px) {
       .stage {
