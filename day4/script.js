@@ -27,6 +27,7 @@ rafPending = false;
 lastDifferentInX = null;
 differenceInX = null;
 lastOpacity = 1;
+
 snapToCard();
 
 function handleGestureStart(evt){
@@ -145,9 +146,7 @@ function snapToCard(){
   var cardsWidth = cards.offsetWidth;
   var cardWidth = (cards.offsetWidth - 48)/4;
   var screenWidth = cards.parentNode.offsetWidth;
-  //console.log(currentTransform);
-  //console.log("total: "+cardsWidth+" each:"+cardWidth);
-  //console.log("n: "+ Math.ceil(cardsWidth/currentTransform));
+
   var n = 0;
   var gap = (5-n)*6;
 
@@ -194,20 +193,38 @@ function snapToCard(){
         lastDifferentInX =  cardWidth*n - gap;
       };
 
-     var container = document.querySelector(".container_"+(n-1));
-     if(n===0)
+     var containerLast = document.querySelector(".container_"+(n-1));
+     var container = document.querySelector(".container_"+n);
+     document.querySelectorAll(".progress").forEach(function(e){
+            e.classList = "progress p"+n;
+        });
+     if(n===0){
        return;
+     }
  
 
-      var colorAnimation = container.animate([
+      var colorAnimation = containerLast.animate([
       {opacity:lastOpacity},
       {opacity:0}
       ],{duration:300,easing:"ease-out"});
 
+       var colorAnimationNow = container.animate([
+      {opacity:1-lastOpacity},
+      {opacity:1}
+      ],{duration:300,easing:"ease-out"});
 
 
       colorAnimation.onfinish = function(){
-        container.style.opacity = 0;
+        containerLast.style.opacity = 0;
+        
+      };
+
+       colorAnimationNow.onfinish = function(){
+
+        container.style.opacity = 1;
+
+        
+
       };
 
 
@@ -234,7 +251,7 @@ function snapToCard(){
     var highBound = [];
     var gap = 6;
     var ruler = [];
-    for(var i = 0; i<cardsLength; i++){
+    for(var i = 0; i<=cardsLength; i++){
       
 
       var left =  0;
@@ -260,19 +277,28 @@ function snapToCard(){
       ruler.push(-cardWidth*i + gap*(5-n));
 
     }
-
+   
     //console.log("n: "+n+" low: "+lowBound[n]+" high: "+highBound[n]+" current: "+currentTransform);
-    //console.log("d: "+(cardWidth +2*gap));
-    console.log("current: "+currentTransform);
-     //console.log(n);
-     console.log("cacl: "+(-cardWidth*n + gap*(5-n)));
-    var opacityLevel = Math.abs(Math.abs(currentTransform%(cardWidth +2*gap)) - (cardWidth +2*gap));
-    var opacity = opacityLevel/(cardWidth +2*gap);
+    // console.log("------------------------------------------");
+
+    // console.log("current: "+currentTransform);
+    //  //console.log(n);
+    //  console.log("cacl: "+(-cardWidth*n + gap*(5-n)));
+    //  console.log("ratio: "+((currentTransform-ruler[n])/(ruler[n]-ruler[n+1])));
+    //var opacityLevel = Math.abs(Math.abs(currentTransform%(cardWidth +2*gap)) - (cardWidth +2*gap));
+    //var opacity = opacityLevel/(cardWidth +2*gap);
+
+    var opacity;
+    if(n<=cardsLength-1){
+      opacity = ((currentTransform-ruler[n])/(ruler[n]-ruler[n+1]))>=0?((currentTransform-ruler[n])/(ruler[n]-ruler[n+1])):1+((currentTransform-ruler[n])/(ruler[n]-ruler[n+1]));
+    }
+
+    
+
     //make sure it not equals to 1;
     if(opacity>=0.99)
       opacity = 0.99;
-    console.log(opacity);
-  console.log(ruler);
+
     
 
 
@@ -284,17 +310,17 @@ function snapToCard(){
    var backgroundPane3 = document.querySelector(".container_3");
 
     if(currentTransform>=ruler[0]){
-      //console.log("blue");
+
       return;
     }
 
     if(currentTransform<ruler[0]&&currentTransform>=ruler[1]){
-      console.log("orange");
+
       backgroundPane0.style.opacity = opacity;
        backgroundPane1.style.opacity = 0.99;
     }
     if(currentTransform<ruler[1]&&currentTransform>=ruler[2]){
-      console.log("green");
+
       backgroundPane0.style.opacity = 0;
       backgroundPane1.style.opacity = opacity;
        backgroundPane2.style.opacity = 0.99;
