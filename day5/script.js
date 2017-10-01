@@ -43,13 +43,13 @@ map.on('load', function () {
           
           window.onresize = resize;
 
-          var resize = function(){
-
-          	if(screen.width>=600){
+          function resize(){
+ 
+          	if(window.innerWidth>=600){
         
           	setTimeout(function(){map.getSource('taxi').setData(data);},1000);
           }else{
-    
+          
           	setTimeout(function(){map.getSource('taxi').setData(dataByTime(12,data));},1000);
           }
 
