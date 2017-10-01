@@ -1,0 +1,90 @@
+body{
+      display:flex;
+      flex-direction: column;
+      user-select:none;
+      font-family: "Precision Sans", "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+      margin: 0;
+    }
+
+    a{
+      text-decoration: none;
+      color:gray;
+    }
+
+    h1{
+    text-align: center;
+    margin:2em;
+    display: none
+  }
+
+    .desk-stage,  .credit{
+      
+      width:100vw;
+      height:100vh;
+      margin:0;
+      align-items: center;
+      overflow-x: hidden;
+      overflow-y: hidden;
+      
+    }
+
+
+
+    .screen {
+      width:calc(100% - 2px);
+      height:100%;
+      overflow-x: hidden;
+      overflow-y: scroll;
+      border:1px solid #eee;
+    }
+
+    .credit{
+      margin-top: 48px;
+    }
+
+    .credit img{
+      width:100%;
+    }
+
+    .credit div {
+      margin: 15px 10% 0 10%;
+    }
+
+    @media(min-width: 600px) {
+      .desk-stage, .credit{
+        width:70vw;
+        height:80vh;
+        margin-left:auto;
+        margin-right:auto;
+      }
+
+      h1{
+        display: block;
+      }
+
+      .screen {
+        height:calc(100% - 2px);
+      }
+     
+    }
+
+    
+
+     .container {
+      background-image: url("./bird.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      position: relative;
+
+    }
+
+   
+   
+
+
+
+    
+
+    
+
+  

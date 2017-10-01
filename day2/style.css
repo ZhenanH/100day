@@ -35,7 +35,7 @@ body{
       height:100%;
       overflow-x: hidden;
       overflow-y: scroll;
-      border:1px solid #eee;
+   
     }
 
     .credit{
@@ -64,6 +64,7 @@ body{
 
       .screen {
         height:calc(100% - 2px);
+        border:1px solid #eee;
       }
      
     }
