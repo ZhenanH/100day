@@ -39,9 +39,26 @@ map.on('load', function () {
                           }
                         
                       });
-         
-          setTimeout(function(){map.getSource('taxi').setData(data);},1000);
 
+          
+          window.onresize = resize;
+
+          var resize = function(){
+
+          	if(screen.width>=600){
+        
+          	setTimeout(function(){map.getSource('taxi').setData(data);},1000);
+          }else{
+    
+          	setTimeout(function(){map.getSource('taxi').setData(dataByTime(12,data));},1000);
+          }
+
+           
+
+          };
+
+          resize();
+          
 
   //         function dayNightAnimate(t){
 		// 	     //console.log(computedOpacity(t));
