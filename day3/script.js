@@ -79,7 +79,7 @@ for(var i = 0; i<2000; i++){
     particles.push(new Particle());
   }
 
-function generateParticles(){
+function generateParticles(t){
   redrawContext();
 
   for(var i = 0;i<particles.length;i++){
@@ -119,7 +119,7 @@ function generateParticles(){
    //p.x += Math.cos(p.theta)*p.radius+p.vx;
    //p.y += Math.sin(p.theta)*p.radius+p.vy;
 
-    
+   
 
 
     
