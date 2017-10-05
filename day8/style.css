@@ -1,0 +1,278 @@
+body{
+      display:flex;
+      flex-direction: column;
+      user-select:none;
+      font-family: "Precision Sans", "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+      margin: 0;
+    }
+
+    a{
+      text-decoration: none;
+      color:gray;
+    }
+
+    h1{
+    text-align: center;
+    margin:2em;
+    display: none
+  }
+
+    .mobile-stage,  .credit{
+      
+      width:100vw;
+      height:100vh;
+      margin:0;
+      align-items: center;
+      overflow-x: hidden;
+      overflow-y: hidden;
+      
+    }
+
+
+
+    .screen {
+      width:calc(100% - 2px);
+      height:100%;
+      overflow-x: hidden;
+      overflow-y: scroll;
+      
+    }
+
+    .credit{
+      margin-top: 48px;
+    }
+
+    .credit img{
+      
+    }
+
+    .credit div {
+      margin: 15px 10% 0 10%;
+    }
+
+    @media(min-width: 600px) {
+      .mobile-stage, .credit{
+        width:414px;
+        height:736px;
+        margin-left:auto;
+        margin-right:auto;
+      }
+
+      h1{
+        display: block;
+      }
+
+      .screen {
+        height:calc(100% - 2px);
+           border:1px solid #ddd;
+      }
+     
+    }
+
+    
+
+     .container {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      position: relative;
+
+    }
+
+    .appbar {
+      border-bottom: solid 1px #eee;
+      height:48px;
+      display: flex;
+      background-color: white;
+    }
+    .appbar span{
+      flex:1;
+       display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .appbar .fa-angle-left{
+      width:10%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5em;
+    }
+
+    .appbar .fa-search{
+       width:10%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .list {
+      background-color: white;
+      height:calc(100% - 48px);
+      overflow-y: scroll;;
+    }
+
+    .nowplaying{
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 48px;
+      background-color: rgba(250,250,250,0.97);
+      border-top: 0.5px solid rgba(0,0,0,0.3);
+      display: flex;
+      flex-direction: row;
+      align-items:center;
+    }
+
+    .track {
+      min-height:96px;
+      display: flex;
+      cursor: pointer;
+      flex-flow: row wrap;
+      transition: all 500ms ease-in;
+      border-bottom: 1px solid #eee;
+    }
+
+    .track img{
+      width:96px;
+      height:96px;
+    }
+
+    .track .action{
+      width:64px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color:lightgray;
+    }
+
+    .track .action i:hover{
+
+      color:gray;
+    }
+
+    .trackBody{
+      width: calc(100% - 96px - 64px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    .trackBody h2{
+      font-size: 1em;
+      text-align: center;
+    }
+
+    .trackBody div{
+      font-size: 0.9em;
+      text-align: center;
+      color:#555;
+    }
+
+    .actions{
+      width:100%;
+      min-height:0;
+      transition: all 200ms ease-out;
+      position: relative;
+      height:0.1px;
+    }
+
+    .nowplaying img {
+      width:36px;
+      border-radius: 50%;
+      border:1px solid rgba(0,0,0,0.3);
+      margin-left:2%;
+      
+      animation: rotating 8s linear infinite;
+    }
+
+    .nowplaying .nowplayingsong{
+      flex:1;
+      margin-left: 5%;
+    }
+
+    .nowplaying .control {
+      
+      width:20%;
+    }
+
+    .nowplaying .control i {
+      margin-left: 20%;
+      cursor: pointer;
+    }
+
+    .nowplaying .control i:hover {
+      color:darkgray;
+    }
+
+    @keyframes rotating {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    .controls {
+      width: 100%;
+      height: 100%;
+      display: none; 
+      position: absolute;
+      color: white;
+      top: 0px;
+      left: 0px;
+      align-items: center;
+      justify-content: center;
+      padding-left: 10%;
+    }
+
+    .controls i {
+      flex:1;
+      position: relative;
+    }
+
+    .controls i:hover {
+      color:lightgray;
+    }
+
+    i{
+      position: relative;
+    }
+
+    i:after {
+      content: "";
+      width: 16px;
+      height: 16px;
+      left:0px;
+      background-color: red;
+      position: absolute;
+      border-radius: 50%;
+      background-color: rgba(200,200,200,0);
+      transition: all 200ms ease-in;
+      transform: scale(1);
+    }
+
+    i.active:after{
+      transform: scale(3);
+      background-color:rgba(200,200,200,0.5)
+    }
+
+    ::-webkit-scrollbar {
+    width: 0px;  /* remove scrollbar space */
+    background: transparent;  /* optional: just make scrollbar invisible */
+    }
+ 
+   
+   
+
+
+
+    
+
+    
+
+  

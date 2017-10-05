@@ -1,0 +1,76 @@
+<html>
+<head>
+<link href='./style.css' rel='stylesheet' type='text/css'>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/web-animations/2.3.1/web-animations.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="../getStyle.js"></script>
+<script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/css-element-queries/0.4.0/ResizeSensor.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/css-element-queries/0.4.0/ElementQueries.min.js"></script>
+
+<title>Music UI dynamic effect</title>
+</head>
+<body>
+  <h1>Day8: Music UI dynamic effect</h1>
+  <div class="mobile-stage">
+    <div class="screen">
+     <div class="container">
+        <div class="appbar">
+          <i class="fa fa-angle-left" aria-hidden="true"></i>
+          <span>Top Tracks</span>
+          <i class="fa fa-search" aria-hidden="true"></i>
+        </div>
+        <div class="list">
+
+         <!-- <div class="track">
+            <img src="./album1.jpeg"/>
+            <div class="trackBody">
+              <h2>Set Fire to the Rain</h2>
+              <div>Adele</div>
+            </div>
+            <div class="action">
+              <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
+            </div>
+            <div class="actions"></div>
+          </div>
+
+
+          <div class="track">
+            <img src="./album2.jpeg"/>
+             <div class="trackBody">
+              <h2>不为谁而作的歌</h2>
+              <div>林俊杰</div>
+            </div>
+            <div class="action">
+              <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
+            </div>
+            <div class="actions"></div>
+          </div>-->
+        </div>
+        <div class="nowplaying">
+          <img src="./album6.jpeg"/>
+          <div class="nowplayingsong">夜曲</div>
+          <div class="control">
+            <i class="fa fa-pause" aria-hidden="true"></i>
+            <i class="fa fa-step-forward" aria-hidden="true"></i>
+          </div>
+        </div>
+    </div> 
+  </div>
+  </div>
+
+   <div class="credit">
+      <img src="./d8.gif"></img>
+      <div>Inspired by: <a href="https://dribbble.com/shots/3842357-Music-UI-dynamic-effect">Kerwin1840</a></div>
+      <div>Prototyped by: <a href="http://zhenan.io/me">Zhenan Hong</a></div>
+    </div> 
+</body>
+<script type="text/babel" src="./disperseButton.jsx"></script>
+<script type="text/babel" src="./script.jsx"></script>
+
+</html>
