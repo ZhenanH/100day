@@ -9,23 +9,46 @@
 </head>
 <body>
 	<div class="gridContainer">
-		<h1>100 Days of Prototyping</h1>	
+		<h1>100 Days of Prototyping</h1>
+		<p class="intro">Inspired by various <a href="https://thegreatdiscontent.com/100days">100 days projects</a>, I decided to start my own 100 days journey of prototyping. Prototyping is a powerful tool for designers to bring ideas from the head into the world. The following prototyping ideas come from my daily work, design communities, random thoughts, friends' suggestions, etc. I inended to prototype with web technology, it is still an ongoing effort, and I enjoyed learning new bits every day. </p>	
 	</div>
 </body>
 
 <script>
+    var titles = {
+    	d1:"Number Key Pad",
+    	d2:"Filter Menu",
+    	d3:"Particle on Canvas",
+    	d4:"Todo Concept",
+    	d5:"100k dots in New York",
+    	d6:"Particle Dispersion Effect",
+    	d7:"React Particle Dispersion",
+    	d8:"Music UI remove Effect",
+    	d9:"Frosted Glass Effect",
+    	d10:"Rainbow Ring"
+    };
+
 	for(var i=1; i<=100; i++ ){
 	
 		var project = document.createElement('a');
 		project.classList = 'card pending';
+		var text = document.createElement('div');
+		text.innerHTML = "Day "+i;
+		text.classList = "text";
 
+		project.appendChild(text);
 		if(i<=10)
 		{
-			project.setAttribute('href',"./day"+i+"/index.html");
-			project.style.backgroundImage = "url(./day"+i+"/d"+i+".png)";
-			project
+			text.innerHTML = "";
+			var textContent = document.createElement('div');
+			textContent.innerHTML = "Day "+i +": "+titles["d"+i] ;
+			text.appendChild(textContent);
 
-			project.classList = "card";
+			project.setAttribute('href',"./day"+i+"/index.html");
+			//project.style.backgroundImage = "url(./day"+i+"/d"+i+".png)";
+
+
+			project.classList = "card done";
 			var gif = document.createElement('img');
 			gif.classList = "preview";
 			gif.setAttribute("src","./day"+i+"/d"+i+".gif");
@@ -35,13 +58,14 @@
 			  // image not found or change src like this as default image:
 			  	this.style.display="none";
 			   //im.src = 'new path';
+			   console.log(this);
 			};
 		}
-		var text = document.createElement('div');
-		text.classList = "text";
-		text.innerHTML = "Day "+i ;
-		project.appendChild(text);
+		
 		document.querySelector(".gridContainer").appendChild(project);
+
+		// project.addEventListener("mouseover",function(){ project.parentNode.querySelectorAll(".card .preview").forEach(function(e){e.classList.toggle("hover-effect");});});
+		// project.addEventListener("mouseout",function(){ project.parentNode.querySelectorAll(".card .preview").forEach(function(e){e.classList.toggle("hover-effect");});});
 	}
 	
 </script>

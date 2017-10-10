@@ -8,7 +8,8 @@ var map = new mapboxgl.Map({
     zoom: 11.5 // starting zoom,
 
 });
-
+console.log(map);
+console.log("map");
 
 map.on('load', function () {
 	//console.log(map.getStyle());
