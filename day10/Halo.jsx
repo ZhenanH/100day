@@ -1,4 +1,4 @@
-window.Halo = class FrostedGlass extends React.Component {
+window.Halo = class Halo extends React.Component {
 
   constructor(props) {
       super(props);

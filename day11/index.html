@@ -1,0 +1,38 @@
+<html>
+<head>
+<link href='./style.css' rel='stylesheet' type='text/css'>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/web-animations/2.3.1/web-animations.min.js"></script>
+
+<script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SoundTrack Animation</title>
+</head>
+<body>
+  <h1>Day11: SoundTrack Animation</h1>
+  <div class="desk-stage">
+    <div class="screen">
+     <div class="container">
+     
+    </div> 
+  </div>
+  </div><!-- 
+   <div class="credit">
+     <img src="./d2.gif"></img>
+      <div>Designed by: <a href="https://dribbble.com/shots/1956586-Filter-Menu">Anton Aheichanka</a></div>
+      <div>Prototyped by: <a href="http://zhenan.io/me">Zhenan Hong</a></div>
+    </div> 
+   <img id="loading" src="../loading.gif"/> -->
+</body>
+
+<script type="text/babel" src="./HaloSoundTrack.jsx"></script>
+<script type="text/babel">
+
+  ReactDOM.render(<HaloSoundTrack className="glass" host={document.querySelector('.container')}/>, document.querySelector('.container'));
+
+  javascript:(function(){var script=document.createElement('script');script.onload=function(){var stats=new Stats();document.body.appendChild(stats.dom);requestAnimationFrame(function loop(){stats.update();requestAnimationFrame(loop)});};script.src='//rawgit.com/mrdoob/stats.js/master/build/stats.min.js';document.head.appendChild(script);})()
+</script>
+</html>

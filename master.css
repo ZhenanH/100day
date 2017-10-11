@@ -95,7 +95,7 @@
 		}
 
 		.card.done .text:hover + .preview{
-			filter:blur(5px);
+			filter:blur(3px);
 			transform: translate(0,-50%) scale(1.2);
 			opacity:0.5;
 		}
