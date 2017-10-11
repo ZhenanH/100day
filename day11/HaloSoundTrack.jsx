@@ -27,6 +27,9 @@ window.HaloSoundTrack = class HaloSoundTrack extends React.Component {
     this.img.style.borderRadius = "50%";
     this.img.style.position = "absolute";
     this.img.style.zIndex = -1;
+    this.img.style.top = "50%";
+    this.img.style.left = "50%";
+    this.img.style.transform = "translate(-50%,-50%)";
     //this.ring();
     this.dots = this.sunbust();
     this.draw();
