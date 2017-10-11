@@ -8,11 +8,18 @@ var map = new mapboxgl.Map({
     zoom: 11.5 // starting zoom,
 
 });
-console.log(map);
-console.log("map");
+
+
+setTimeout(function(){
+  if(!window.mapLoaded){
+    console.log("reloaded");
+    location.reload();
+  }
+},5000);
 
 map.on('load', function () {
 	//console.log(map.getStyle());
+  window.mapLoaded = true;
 	console.log("map loaded");
 	document.querySelector("#loading").style.opacity = 0;
 	geoJSON.then(function(data){
