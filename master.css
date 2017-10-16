@@ -9,6 +9,11 @@
 			
 		}
 
+		img {
+			cursor: pointer;
+
+		}
+
 		.gridContainer h1{
 			width:100%;
 			text-align: center;
@@ -54,9 +59,11 @@
 		
 		}
 
-		.card:hover ~ .card {
-			
+		a:-webkit-any-link {
+			text-decoration: none;
 		}
+
+	
 
 		.card .text {
 		   position: absolute;
@@ -64,17 +71,33 @@
 		    display: flex;
 			justify-content: center;
 			align-items: center;
-		    opacity: 0;
+		    opacity: 1;
 		    width: 100%;
 		    height: 100%;
 		    transform: translate(0,-50%);
+		    z-index: 1;
 		}
 
-		.card .text div{
+		.card .text .textContent{
+			text-decoration: none;
 			padding:10%;
 			font-size: 0.8em;
+			background-color: rgba(255,255,255,0.95);
+			height: 100%;
+			 display: flex;
+			justify-content: center;
+			align-items: center;
+			transition: all 200ms ease-out;
+			opacity: 0;
 
 		}
+
+		.revealer:hover + .textContent{
+			opacity: 1;
+
+		}
+
+		
 
 		.pending .text {
 		   
@@ -82,23 +105,41 @@
 		}
 
 		.card.done .text {
-			opacity:0;
-			background-color: rgba(255,255,255,0.50);
+			
 			color:#222;
-
+			/*position: relative;*/
 			transition: all 200ms ease-out;
-			z-index: 1;
+			
+
 		}
 
+	
+
 		.card.done .text:hover {
-			opacity:1;
+			
 		}
 
 		.card.done .text:hover + .preview{
-			filter:blur(3px);
+			/*filter:blur(3px);
 			transform: translate(0,-50%) scale(1.2);
-			opacity:0.5;
+			opacity:0.5;*/
+			filter: grayscale(0);
 		}
+
+		.card.done .revealer{
+			opacity: 0;
+			position: absolute;
+			width: 100%;
+			top:50%;
+			left:0;
+			padding: 0;
+			height:50%;
+			z-index: 2;
+
+		}
+
+		
+
 
 
 		@media(min-width: 600px) and (max-width:960px){
@@ -140,8 +181,8 @@
 		}*/
 
 		.hover-effect {
-			filter:blur(2px);
-			transform: translate(-50%,-50%) scale(1.2);
+			filter:grayscale(100%) blur(3px);
+			
 		}
 
 

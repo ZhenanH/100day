@@ -37,13 +37,22 @@
 		text.innerHTML = "Day "+i;
 		text.classList = "text";
 
+
 		project.appendChild(text);
 		if(i<=12)
 		{
+
 			text.innerHTML = "";
+			var hover = document.createElement('div');
+			hover.classList = "revealer";
+			text.appendChild(hover);
+
 			var textContent = document.createElement('div');
+			textContent.classList = "textContent";
 			textContent.innerHTML = "Day "+i +": "+titles["d"+i] ;
 			text.appendChild(textContent);
+
+			
 
 			project.setAttribute('href',"./day"+i+"/index.html");
 			//project.style.backgroundImage = "url(./day"+i+"/d"+i+".png)";
@@ -52,9 +61,25 @@
 			project.classList = "card done";
 			var gif = document.createElement('img');
 			gif.classList = "preview";
-			gif.setAttribute("src","./day"+i+"/d"+i+".gif");
+
+			gif.setAttribute("src","./day"+i+"/d"+i+".jpg");
+
+			project.onmouseout = (function(gif,i){ 
+				return function(){
+					gif.setAttribute("src","./day"+i+"/d"+i+".jpg");
+				}
+			})(gif,i);
+
+			project.onmouseover  = (function(gif,i){ 
+				return function(){
+					gif.setAttribute("src","./day"+i+"/d"+i+".gif");
+				}
+			})(gif,i);
+
+	
 			project.appendChild(gif);
 
+			
 			gif.onerror = function(x){
 			  // image not found or change src like this as default image:
 			  	this.style.display="none";

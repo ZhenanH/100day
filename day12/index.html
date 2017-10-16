@@ -1,0 +1,55 @@
+<html>
+<head>
+<link href='./style.css' rel='stylesheet' type='text/css'>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/web-animations/2.3.1/web-animations.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="../getStyle.js"></script>
+<script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
+
+
+<title>Adjust date flow for Travel App</title>
+</head>
+<body>
+  <h1>Day12: Adjust date flow for Travel App</h1>
+  <div class="mobile-stage">
+    <div class="screen">
+     <div class="container">
+     <div class="banner">
+       <div class="banner-actions"><i class="fa fa-chevron-left" aria-hidden="true"></i><span>VIENNA</span></div>
+     </div>
+     <div class="content">
+       <div class="destination_shadow">
+        <div class="destination_shadow1"></div>
+        <div class="destination_shadow2"></div>
+       </div>
+       <div class="destination">
+         <div class="from"><div class="airport">JFK</div><div class="city">New York</div></div>
+         <div class="split"></div>
+         <div class="to"><div class="airport">VIE</div><div class="city">Vienna</div></div>
+       </div>
+
+      <div class="adjust-button button">ADJUST DATE</div>
+       <div class="itinerary"></div>
+       <div class="datepicker"></div>
+     
+     </div> 
+     </div>
+    </div> 
+  </div>
+  </div>
+
+   <div class="credit">
+      <img src="./d12.gif"></img>
+      <div>Designed by: <a href="https://dribbble.com/shots/3001324-Adjust-date-flow-for-Tinder-Travel-by-fantasy">Gleb Kuznetsov</a></div>
+      <div>Prototyped by: <a href="http://zhenan.io/me">Zhenan Hong</a></div>
+    </div> 
+</body>
+<script type="text/babel" src="./itinerary.jsx"></script>
+<script type="text/babel" src="./FlyDatePicker.jsx"></script>
+<script type="text/babel" src="./script.jsx"></script>
+
+</html>
