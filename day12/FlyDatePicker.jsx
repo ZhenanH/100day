@@ -114,7 +114,7 @@ window.FlyDatePicker = class FlyDatePicker extends React.Component {
 								};
 								return <div key ={i} style={{flex:1,display:"flex",flexDirection:"column",borderRight:"1px solid rgba(0,0,0,0.05)", background:"white",transition:"transform 200ms ease-out"}}>
 											<div style={{flex:1,maxHeight:"38px",overflow:"hidden"}}>
-												<div className="weekday" style={{display:"flex",flexDirection:"column",overflow:"hidden",transform:"translate(0,-33%)",transition:"all 200ms ease-out",transitionDelay:"200ms"}}>	
+												<div className="weekday" style={{display:"flex",flexDirection:"column",overflow:"hidden",transform:"translate(0,-33%)",transition:"all 200ms ease-out",transitionDelay:"400ms"}}>	
 													<div style={{textAlign:"center"}}>{plane}</div>
 													<div style={{textAlign:"center",color:"#333"}}>{today.getDate()}</div>
 													<div style={{textAlign:"center"}}>{today.toLocaleString('en-us', {  weekday: 'short' })}</div>

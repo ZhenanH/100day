@@ -51,6 +51,7 @@ adjustButton.onclick = function(evt){
 	],300);
 
 	dismissItinerary.onfinish = function(){
+		itinerary.style.opacity = 0;
 		itinerary.style.display = "none";
 	};
 };
