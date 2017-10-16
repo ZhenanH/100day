@@ -64,17 +64,22 @@
 
 			gif.setAttribute("src","./day"+i+"/d"+i+".jpg");
 
-			project.onmouseout = (function(gif,i){ 
+            if(window.innerWidth>=600){
+            	
+            		project.onmouseout = (function(gif,i){ 
 				return function(){
 					gif.setAttribute("src","./day"+i+"/d"+i+".jpg");
 				}
-			})(gif,i);
+				})(gif,i);
 
-			project.onmouseover  = (function(gif,i){ 
-				return function(){
-					gif.setAttribute("src","./day"+i+"/d"+i+".gif");
-				}
-			})(gif,i);
+				project.onmouseover  = (function(gif,i){ 
+					return function(){
+						gif.setAttribute("src","./day"+i+"/d"+i+".gif");
+					}
+				})(gif,i);
+            }
+
+		
 
 	
 			project.appendChild(gif);
