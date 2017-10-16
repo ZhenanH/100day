@@ -24,40 +24,7 @@ adjustButton.onclick = function(evt){
 
 		
 		var finish = function(evt){
-			// var purchaseButton = evt.target;
-			// purchaseButton.style.zIndex = 100;
-			// purchaseButton.style.transition = "initial";
-			// purchaseButton.innerHTML = '';
-			// var scaleUp = purchaseButton.animate([
-			// 	{transform:"scale(1,1)"},
-			// 	{transform:"scale(1.25,15.33)"}
-			// 	],400);
-
-			// scaleUp.onfinish=function(){
-			// 	purchaseButton.style.position = "absolute";
-			// 	// purchaseButton.style.
-			// 	purchaseButton.style.top = 0;
-			// 	purchaseButton.style.width = "100%";
-			// 	purchaseButton.style.height = "100%";
-			// 	purchaseButton.style.pointerEvents = "none";
-			// 	var reloadButton = document.createElement('div');
-			// 	reloadButton.style.width = "80%";
-			// 	reloadButton.style.height = "48px"
-			// 	reloadButton.style.color = "white";
-			// 	reloadButton.innerHTML = "End";
-			// 	reloadButton.style.border = "1px solid white";
-			// 	reloadButton.style.display = "flex";
-			// 	reloadButton.style.alignItems = "center";
-			// 	reloadButton.style.justifyContent = "center";
-			// 	reloadButton.style.fontSize = "1.8em";
-			// 	reloadButton.style.cursor = "pointer";
-			// 	reloadButton.style.zIndex = 1000;
-			// 	purchaseButton.appendChild(reloadButton);
-			// 	setTimeout(function(){window.location.reload();},1000);
-				
-
-			//};
-			
+			window.location.reload();			
 		};
 
 		ReactDOM.render(<div>
