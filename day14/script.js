@@ -1,13 +1,13 @@
 
 var programs = [
-  {cover:"./Asset1.png",progress:25,currentEpisode:{podcast:"99% INVISIBILE",episode:"",time:"",since:""}},
-  {cover:"./Asset2.png",progress:75,currentEpisode:{podcast:"UX COFFEE",episode:"",time:"",since:""}},
-  {cover:"./Asset3.png",progress:15,currentEpisode:{podcast:"HOW I BUILT THIS",episode:"",time:"",since:""}},
-  {cover:"./Asset4.png",progress:100,currentEpisode:{podcast:"IDEO U",episode:"",time:"",since:""}},
-  {cover:"./Asset5.png",progress:67,currentEpisode:{podcast:"HIGHT RESOLUTION",episode:"",time:"",since:""}},
-  {cover:"./Asset6.png",progress:0,currentEpisode:{podcast:"PLANET MONEY",episode:"",time:"",since:""}},
-  {cover:"./Asset7.png",progress:10,currentEpisode:{podcast:"STARTUP",episode:"",time:"",since:""}},
-  {cover:"./Asset8.png",progress:55,currentEpisode:{podcast:"THE CRAZY ONE",episode:"",time:"",since:""}}
+  {new:1, cover:"./Asset1.png",progress:25,currentEpisode:{podcast:"99% INVISIBILE",episode:"99% Details",time:"OCT 17, 2016 . <span class='time-left'> 26 MIN LEFT</span>",since:""}},
+  {new:0, cover:"./Asset2.png",progress:75,currentEpisode:{podcast:"UX COFFEE",episode:"设计小白的光速成长之路",time:"OCT 10, 2017 . <span class='time-left'> 26 MIN LEFT</span>",since:""}},
+  {new:3, cover:"./Asset3.png",progress:15,currentEpisode:{podcast:"HOW I BUILT THIS",episode:"Airbnb: Joe Gebbia",time:"OCT 17, 2016 . <span class='time-left'> 13 MIN LEFT</span>",since:""}},
+  {new:0, cover:"./Asset4.png",progress:100,currentEpisode:{podcast:"IDEO U",episode:"Unlock a Creative Confidence Mindset",time:"SEP 11, 2017 . <span class='time-left'> PLAYED</span>",since:""}},
+  {new:1, cover:"./Asset5.png",progress:67,currentEpisode:{podcast:"HIGHT RESOLUTION",episode:"Instragram Head of Design",time:"AUG 17, 2016 . <span class='time-left'> 26 MIN LEFT</span>",since:""}},
+  {new:1, cover:"./Asset6.png",progress:0,currentEpisode:{podcast:"PLANET MONEY",episode:"Buy Low, Sell Prime",time:"OCT 12, 2017 . <span class='time-left'> 13 MIN LEFT</span>",since:""}},
+  {new:0, cover:"./Asset7.png",progress:10,currentEpisode:{podcast:"STARTUP",episode:"New Money",time:"OCT 15, 2017 . <span class='time-left'> 56 MIN LEFT</span>",since:""}},
+  {new:0, cover:"./Asset8.png",progress:55,currentEpisode:{podcast:"THE CRAZY ONE",episode:"Who owns creativity",time:"OCT 13, 2017 . <span class='time-left'> 10 MIN LEFT</span>",since:""}}
 ];
 
 var track = document.querySelector(".verticle-track");
@@ -17,6 +17,12 @@ programs.forEach(function(e){
   cube.classList = "cube";
   cube.style.backgroundImage = "url('"+e.cover+"')";
   cube.style.backgroundSize = "cover";
+  if(e.new > 0 ){
+  var notification = document.createElement("div");
+  notification.classList = "notification";
+  notification.innerHTML = e.new;
+  cube.appendChild(notification);
+}
   track.appendChild(cube);
 });
 
@@ -29,13 +35,13 @@ if (window.PointerEvent) {
   track.addEventListener('pointercancel',handleGestureEnd, true);
 }else{
    // Add Touch Listener
-  track.addEventListener('touchstart', this.handleGestureStart, true);
-  track.addEventListener('touchmove', this.handleGestureMove, true);
-  track.addEventListener('touchend', this.handleGestureEnd, true);
-  track.addEventListener('touchcancel', this.handleGestureEnd, true);
+  track.addEventListener('touchstart', handleGestureStart, true);
+  track.addEventListener('touchmove', handleGestureMove, true);
+  track.addEventListener('touchend', handleGestureEnd, true);
+  track.addEventListener('touchcancel', handleGestureEnd, true);
 
   // Add Mouse Listener
-  track.addEventListener('mousedown', this.handleGestureStart, true);
+  track.addEventListener('mousedown', handleGestureStart, true);
 }
 
 
@@ -48,7 +54,7 @@ var lastTouchPos = null;
 snapToCube();
 
 function handleGestureStart(evt){
-  console.log("start");
+  
   evt.preventDefault();
   
   if(evt.touches && evt.touches.length > 1) {
@@ -68,7 +74,7 @@ function handleGestureStart(evt){
 }
 
 function handleGestureMove(evt){
-  console.log("move");
+ 
    evt.preventDefault();
 
    if(!initialTouchPos){
@@ -121,7 +127,7 @@ function updateSwipeRestPosition(){
 
 
 function handleGestureEnd(evt){
-   console.log("end");
+  
   evt.preventDefault();
   
   if(evt.touches && evt.touches.length > 0) {
@@ -178,7 +184,7 @@ function snapToCube(){
    }
 
   });
-  console.log("closestCubeIndex: "+closestCubeIndex);
+  
   if(!differenceInY)
     differenceInY = 0;
 
@@ -188,10 +194,11 @@ function snapToCube(){
     ],{duration:200,easing:"ease-out"});
 
   snap.onfinish = function(){
+
     track.style.transform = 'translateY('+(-differenceInY-transformDelta)+'px)';
     lastDifferentInY =  differenceInY+transformDelta;
   };
-  
+ 
   var progress = document.querySelector('.progress');
   progress.style.width = programs[closestCubeIndex].progress+"%";
 
@@ -205,8 +212,20 @@ function snapToCube(){
   });
 
   document.querySelector(".podcastName").innerHTML = programs[closestCubeIndex].currentEpisode.podcast;
-    
+  document.querySelector(".epidsodeName").innerHTML = programs[closestCubeIndex].currentEpisode.episode;
+  document.querySelector(".time").innerHTML = programs[closestCubeIndex].currentEpisode.time;
 }
+
+document.querySelector(".control i").addEventListener('click',function(e){
+ 
+  if(e.target.classList.value ===  "fa fa-pause"){
+    e.target.classList = "fa fa-play";
+    document.querySelector('.playingIcon').classList = "playingIcon paused";
+  }else{
+    e.target.classList = "fa fa-pause";
+    document.querySelector('.playingIcon').classList = "playingIcon";
+  }
+});
 
 
 
