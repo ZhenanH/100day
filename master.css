@@ -55,7 +55,7 @@
 			font-size:1.8em;
 			position: relative;
 			cursor: pointer;
-			overflow:hidden;
+		
 		
 		}
 
@@ -107,7 +107,7 @@
 		}
 
 		.card.done .text {
-			
+			overflow: hidden;
 			color:#222;
 			/*position: relative;*/
 			transition: all 200ms ease-out;
@@ -185,6 +185,18 @@
 		.hover-effect {
 			filter:grayscale(100%) blur(3px);
 			
+		}
+
+		.type {
+			position: absolute;
+			color: #999;
+			bottom:-20px;
+			left:0;
+			font-size: 0.2em;
+			z-index:10;
+			padding:2px;
+			font-family: Helvetica;
+			font-weight: 300;
 		}
 
 

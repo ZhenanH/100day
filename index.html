@@ -16,19 +16,20 @@
 
 <script>
     var titles = {
-    	d1:"Number Key Pad",
-    	d2:"Filter Menu",
-    	d3:"Particle on Canvas",
-    	d4:"Todo Concept",
-    	d5:"100k dots in New York",
-    	d6:"Particle Dispersion Effect",
-    	d7:"React Particle Dispersion",
-    	d8:"Music UI remove Effect",
-    	d9:"Frosted Glass Effect",
-    	d10:"Rainbow Ring",
-    	d11:"Soundtrack Animation",
-    	d12:"Adjust date flow for Travel App",
-    	d13:"Podcast Redesign: Browse"
+    	d1:{title:"Number Key Pad", type:"PROTOTYPE", tech:"JS / HTML"},
+    	d2:{title:"Filter Menu",type:"PROTOTYPE",tech:"JS / HTML"},
+    	d3:{title:"Particle on Canvas",type:"PROTOTYPE",tech:"JS / HTML Canvas"},
+    	d4:{title:"Todo Concept",type:"PROTOTYPE",tech:"JS / HTML"},
+    	d5:{title:"100k dots in New York",type:"PROTOTYPE",tech:"JS / HTML"},
+    	d6:{title:"Particle Dispersion Effect",type:"EFFECT",tech:"JS / HTML Canvas"},
+    	d7:{title:"React Particle Dispersion",type:"EFFECT",tech:"JS / HTML Canvas"},
+    	d8:{title:"Music UI remove Effect",type:"PROTOTYPE",tech:"JS / HTML"},
+    	d9:{title:"Frosted Glass Effect",type:"EFFECT",tech:"JS / HTML Canvas"},
+    	d10:{title:"Rainbow Ring",type:"EFFECT",tech:"JS / HTML Canvas"},
+    	d11:{title:"Soundtrack Animation",type:"EFFECT",tech:"JS / HTML Canvas"},
+    	d12:{title:"Adjust date flow for Travel App",type:"PROTOTYPE",tech:"JS / HTML"},
+    	d13:{title:"Podcast Redesign - Browsing",type:"DESIGN",tech:"Illustrator"},
+    	d14:{title:"Podcast Redesign - Browsing Interaction",type:"PROTOTYPE",tech:"JS / HTML"}
     };
 
 	for(var i=1; i<=100; i++ ){
@@ -39,10 +40,14 @@
 		text.innerHTML = "Day "+i;
 		text.classList = "text";
 
+		var type = document.createElement('span');
+		type.classList = 'type';
+		project.appendChild(text);
 
 		project.appendChild(text);
-		if(i<=13)
+		if(i<=14)
 		{
+
 
 			text.innerHTML = "";
 			var hover = document.createElement('div');
@@ -51,7 +56,7 @@
 
 			var textContent = document.createElement('div');
 			textContent.classList = "textContent";
-			textContent.innerHTML = "Day "+i +": "+titles["d"+i] ;
+			textContent.innerHTML = "Day "+i +": "+titles["d"+i].title ;
 			text.appendChild(textContent);
 
 			
@@ -79,6 +84,11 @@
 						gif.setAttribute("src","./day"+i+"/d"+i+".gif");
 					}
 				})(gif,i);
+
+				var type = document.createElement('span');
+				type.innerHTML = titles["d"+i].tech ;
+				type.classList = 'type';
+				project.appendChild(type);
             }
 
 		
