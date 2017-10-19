@@ -103,6 +103,7 @@ function updateSwipeRestPosition(){
 
 
 function handleGestureEnd(evt){
+  console.log("end");
   evt.preventDefault();
   
   if(evt.touches && evt.touches.length > 0) {

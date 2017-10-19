@@ -20,7 +20,7 @@ programs.forEach(function(e){
   track.appendChild(cube);
 });
 
-snapToCube();
+
 
 if (window.PointerEvent) {
   track.addEventListener('pointerdown',handleGestureStart, true);
@@ -45,7 +45,10 @@ var lastDifferentInY = null;
 var differenceInY = null;
 var lastTouchPos = null;
 
+snapToCube();
+
 function handleGestureStart(evt){
+  console.log("start");
   evt.preventDefault();
   
   if(evt.touches && evt.touches.length > 1) {
@@ -65,6 +68,7 @@ function handleGestureStart(evt){
 }
 
 function handleGestureMove(evt){
+  console.log("move");
    evt.preventDefault();
 
    if(!initialTouchPos){
@@ -117,6 +121,7 @@ function updateSwipeRestPosition(){
 
 
 function handleGestureEnd(evt){
+   console.log("end");
   evt.preventDefault();
   
   if(evt.touches && evt.touches.length > 0) {
@@ -173,7 +178,7 @@ function snapToCube(){
    }
 
   });
-
+  console.log("closestCubeIndex: "+closestCubeIndex);
   if(!differenceInY)
     differenceInY = 0;
 

@@ -131,7 +131,7 @@ body{
       height:140px;
       width:10%;
       background-color: rgba(0,0,0,0.05);
-      transition: width 400ms ease-out;
+      transition: width 600ms ease-out;
    }
 
    .track-container {
@@ -145,7 +145,7 @@ body{
    }
 
    .verticle-track {
-      
+      touch-action: none;
       display: flex;
       flex-direction: column;
 
