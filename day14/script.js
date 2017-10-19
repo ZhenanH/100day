@@ -54,7 +54,7 @@ var lastTouchPos = null;
 snapToCube();
 
 function handleGestureStart(evt){
-  
+  console.log("start");
   evt.preventDefault();
   
   if(evt.touches && evt.touches.length > 1) {
@@ -74,7 +74,7 @@ function handleGestureStart(evt){
 }
 
 function handleGestureMove(evt){
- 
+ console.log("move");
    evt.preventDefault();
 
    if(!initialTouchPos){
@@ -110,7 +110,7 @@ function onAnimFrame() {
   var transformStyle = 'translateY('+(-differenceInY)+'px)';
 
 
-  var swipeFrontElement = document.querySelector(".verticle-track")
+  var swipeFrontElement = document.querySelector(".verticle-track");
   swipeFrontElement.style.webkitTransform = transformStyle;
   swipeFrontElement.style.MozTransform = transformStyle;
   swipeFrontElement.style.msTransform = transformStyle;
@@ -127,7 +127,7 @@ function updateSwipeRestPosition(){
 
 
 function handleGestureEnd(evt){
-  
+  console.log("end");
   evt.preventDefault();
   
   if(evt.touches && evt.touches.length > 0) {
@@ -144,10 +144,11 @@ function handleGestureEnd(evt){
     document.removeEventListener('mousemove', this.handleGestureMove, true);
     document.removeEventListener('mouseup', this.handleGestureEnd, true);
   }
-
+  snapToCube(evt);
   updateSwipeRestPosition();
+  
   initialTouchPos = null;
-  snapToCube();
+  
 }
 
 function getGesturePointFromEvent(evt){
@@ -164,7 +165,7 @@ function getGesturePointFromEvent(evt){
   return point;
 }
 
-function snapToCube(){
+function snapToCube(evt){
   var cubes = document.querySelectorAll('.cube');
   var detailSpan = document.querySelector('.current');
   var closestCubeIndex = 0;
@@ -187,6 +188,21 @@ function snapToCube(){
   
   if(!differenceInY)
     differenceInY = 0;
+
+  if(transformDelta===0){
+
+    //handleGestureMove(evt);
+    lastTouchPos = getGesturePointFromEvent(evt);
+     differenceInY = initialTouchPos.y - lastTouchPos.y;
+
+
+  if(lastDifferentInY)
+    differenceInY = differenceInY + lastDifferentInY;
+
+   lastDifferentInY =  differenceInY + transformDelta;
+    return;
+  }
+
 
   var snap = track.animate([
       {transform:'translateY('+(-differenceInY)+'px)'},
