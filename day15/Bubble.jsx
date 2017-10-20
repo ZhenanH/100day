@@ -17,7 +17,7 @@ window.Bubble = class Bubble extends React.Component {
     this.ctx.webkitImageSmoothingEnabled=true;
 
     this.bigBubble();
-    this.smallBubbles = this.generateSmallBubble(200);
+    this.smallBubbles = this.generateSmallBubble(20);
     // this.ctx.fillStyle = "black";
     // this.ctx.fillRect(0,0,this.canvas.width,this.canvas.height);
 
