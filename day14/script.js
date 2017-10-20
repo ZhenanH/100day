@@ -54,7 +54,7 @@ var lastTouchPos = null;
 snapToCube();
 
 function handleGestureStart(evt){
-  console.log("start");
+  //console.log("start");
   evt.preventDefault();
   
   if(evt.touches && evt.touches.length > 1) {
@@ -74,7 +74,7 @@ function handleGestureStart(evt){
 }
 
 function handleGestureMove(evt){
- console.log("move");
+ //console.log("move");
    evt.preventDefault();
 
    if(!initialTouchPos){
@@ -127,7 +127,7 @@ function updateSwipeRestPosition(){
 
 
 function handleGestureEnd(evt){
-  console.log("end");
+  // console.log("end");
   evt.preventDefault();
   
   if(evt.touches && evt.touches.length > 0) {
