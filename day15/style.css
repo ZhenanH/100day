@@ -49,7 +49,7 @@ body{
 
     .screen {
       width:calc(100% - 2px);
-      height:100%;
+ 
       overflow-x: hidden;
       overflow-y: scroll;
 
@@ -82,7 +82,7 @@ body{
       }
 
       .screen {
-        height:calc(100% - 2px);
+       
      
       }
      
@@ -113,7 +113,21 @@ body{
 
 
    
-   
+    .liquid {
+      filter:url("#liquid");
+    }
+
+    .bigBall {
+      top: 50%;
+      left:50%;
+      transform: translate(-50%,-50%);
+    }
+
+    .smallBubbles {
+      top: 50%;
+      left:50%;
+      transform: translate(-50%,-50%);
+    }
 
 
 
