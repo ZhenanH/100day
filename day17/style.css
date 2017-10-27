@@ -1,0 +1,187 @@
+body{
+      display:flex;
+      flex-direction: column;
+      user-select:none;
+      font-family: "Precision Sans", "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+      margin: 0;
+
+    }
+
+    body:after{
+      position: fixed;
+      z-index: -2;
+      width: 100%;
+      height:100%;
+      top:0;
+      left:0;
+      content: "";
+      /*background-color: rgba(255,255,255,0.7);
+      background-image: url('./bg.jpg');
+      background-size: cover;
+      filter: saturate(40%);*/
+    }
+
+    a{
+      text-decoration: none;
+      color:gray;
+    }
+
+    h1{
+    text-align: center;
+    margin:2em;
+    display: none
+  }
+   .mobile-stage {
+    box-shadow: 0px 10px 10px rgba(0,0,0,0.4);
+   }
+
+    .mobile-stage,  .credit{
+      
+      width:100vw;
+      height:100vh;
+      margin:0;
+      align-items: center;
+      overflow-x: hidden;
+      overflow-y: hidden;
+      
+    }
+
+
+
+    .screen {
+      width:calc(100% - 2px);
+      height:100%;
+      overflow-x: hidden;
+      overflow-y: scroll;
+      background-color: white;
+      background-color:#eaeaec;
+    }
+
+    .credit{
+      margin-top: 48px;
+    }
+
+    .credit img{
+      
+    }
+
+    .credit div {
+      margin: 15px 10% 0 10%;
+    }
+
+    @media(min-width: 600px) {
+      .mobile-stage, .credit{
+        width:414px;
+        height:736px;
+        margin-left:auto;
+        margin-right:auto;
+      }
+
+      h1{
+        display: block;
+      }
+
+      .screen {
+        height:calc(100% - 2px);
+           border:1px solid #ddd;
+      }
+     
+    }
+
+    
+
+     .container {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      height:100%;
+      background-color:#eaeaec;
+
+    }
+
+    
+
+    ::-webkit-scrollbar {
+    width: 0px;  /* remove scrollbar space */
+    background: transparent;  /* optional: just make scrollbar invisible */
+    }
+
+    .focusCard {
+      transform:scale(1) !important;
+
+    }
+
+    .focusCard + .moodCardContent .cardTitle div{
+      transform:translate(0,0);
+    }
+
+    .focusCard + .moodCardContent .playMood{
+      opacity:1;
+    }
+
+    .focusCard + .moodCardContent .playStat{
+      opacity:1;
+    }
+
+    .footer{
+      position: absolute;
+      bottom: 0;
+      width:100%;
+      height:80px;
+      display: flex;
+      align-items: center;
+      left:0;
+    }
+
+    .header {
+      position: absolute;
+      left:0;
+      top: 0;
+      width:100%;
+      height:64px;
+      display: flex;
+      align-items: center;
+    }
+
+    .header .account{
+      display: flex;
+      align-items: center;
+    }
+    
+
+    .moods {
+      animation:flyright 800ms ease-out forwards;
+      animation-delay: 300ms;
+    }
+
+    .setting {
+      animation:flyup 800ms ease-out forwards;
+      animation-delay: 300ms;
+    }
+   
+    @keyframes flyright {
+      0% {transform: translate(-200px,0);}
+      100% {transform: translate(0,0)}
+    }
+
+    @keyframes flyup {
+      0% {transform: translate(0,100px);}
+      100% {transform: translate(0,0)}
+    }
+
+    .up{
+      animation:float 1000ms infinite ease-out;
+      animation-direction: alternate;
+    }
+
+    @keyframes float {
+      0% {transform: translate(0,100%);}
+      100% {transform: translate(0,0)}
+    }
+
+
+    
+
+    
+
+  
