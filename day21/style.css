@@ -1,0 +1,118 @@
+body{
+      display:flex;
+      flex-direction: column;
+      user-select:none;
+      font-family: "Precision Sans", "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+      margin: 0;
+      
+    }
+
+ *{
+  outline: none;
+ }
+
+
+    a{
+      text-decoration: none;
+      color:gray;
+    }
+
+    h1{
+    text-align: center;
+    margin:2em;
+    display: none
+  }
+
+    .desk-stage,  .credit{
+      
+      width:100%;
+      height:100%;
+      margin:0;
+      align-items: center;
+      overflow-x: hidden;
+      overflow-y: hidden;
+      
+    }
+
+
+
+    .screen {
+      width:calc(100% - 2px);
+      height:100%;
+      overflow-x: hidden;
+      overflow-y: scroll;
+
+      
+    }
+
+    .credit{
+      margin-top: 48px;
+    }
+
+    .credit img{
+      width:100%;
+    }
+
+    .credit div {
+      margin: 15px 10% 0 10%;
+    }
+
+        .container {
+      width: 100%;
+      height:100%;
+
+      display:flex;
+      flex-direction: column;
+
+      align-items: center;
+      
+    }
+
+    .container img {
+      border:1px solid #999;
+      margin:20px;
+       width:90%;
+
+    }
+
+    @media(min-width: 600px) {
+      .desk-stage, .credit{
+        width:70%;
+       height:80vh;
+        margin-left:auto;
+        margin-right:auto;
+
+      }
+
+      h1{
+        display: block;
+      }
+
+      .screen {
+        height:calc(100% - 2px);
+        /* border:solid 1px #eee;*/
+      }
+
+      .container img {
+      width:initial;
+    }
+     
+    }
+
+    
+
+ 
+
+   
+
+
+   
+   
+
+
+
+    
+
+    
+
+  
