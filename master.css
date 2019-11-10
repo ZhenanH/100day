@@ -6,7 +6,7 @@
 			display:flex;
 			flex-flow:row wrap;
 			height:100vh;
-			
+			margin-bottom:10em;
 		}
 
 		img {
@@ -20,6 +20,7 @@
 			color:#333;
 			margin-top:2em;
 			margin-bottom:2em;
+
 		}
 
 		.intro {
@@ -29,6 +30,8 @@
 			margin:0 0 40px 0;
 			font-family: 'Open Sans', Helvetica, Arial, Lucida, sans-serif;
 			font-weight: 100;
+			text-align: center;
+			width:100%;
 		}
 
 		.intro a {
@@ -99,7 +102,9 @@
 
 		}
 
-		
+		.pending {
+			display: none;
+		}
 
 		.pending .text {
 		   

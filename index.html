@@ -2,15 +2,15 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>100 days of prototyping</title>
+	<title>Prototyping</title>
 	<link href='./master.css' rel='stylesheet' type='text/css'>
 
 
 </head>
 <body>
 	<div class="gridContainer">
-		<h1>100 Days of Prototyping</h1>
-		<p class="intro">Inspired by various <a href="https://thegreatdiscontent.com/100days">100 days projects</a>, I decided to start my own 100 days journey of prototyping. Prototyping is a powerful tool for designers to bring ideas from the head into the world. The following prototyping ideas come from my daily work, design communities, random thoughts, friends' suggestions, etc. I inended to prototype with web technology, it is still an ongoing effort, and I enjoyed learning new bits every day. </p>	
+		<h1>Prototyping</h1>
+		<div class="intro">Inspired by making.</div>	
 	</div>
 </body>
 
@@ -45,12 +45,12 @@
 		var project = document.createElement('a');
 		project.classList = 'card pending';
 		var text = document.createElement('div');
-		text.innerHTML = "Day "+i;
+		text.innerHTML = "Prototype "+i;
 		text.classList = "text";
 
 		var type = document.createElement('span');
 		type.classList = 'type';
-		project.appendChild(text);
+		//project.appendChild(text);
 
 		project.appendChild(text);
 		if(i<=21)
@@ -64,7 +64,7 @@
 
 			var textContent = document.createElement('div');
 			textContent.classList = "textContent";
-			textContent.innerHTML = "Day "+i +": "+titles["d"+i].title ;
+			textContent.innerHTML = "Prototype "+i +": "+titles["d"+i].title ;
 			text.appendChild(textContent);
 
 			
