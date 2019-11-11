@@ -17,7 +17,7 @@ function slideUp(){
 		ReactDOM.unmountComponentAtNode(container);
 
 		ReactDOM.render(<div style={{overflow:"hidden",height:"100%",width:"100%",position:"relative", display:"flex", backgroundColor: "#eaeaec",alignItems:"center"}}>
-	<div className="track" style={{display:"flex",flexDirection:"row",position:"relative",left:"calc(50% - 144px)"}}>
+	<div className="track" style={{display:"flex",flexDirection:"row",position:"relative",left:"calc(50% - 144px)",height: "800px",top:"150px"}}>
 		<MoodCard cover="adventure.jpg" theme="Adventure" listen="143"/>
 		<MoodCard cover="quiet.jpg" theme="Quiet" listen="23"/>
 		<MoodCard cover="roadtrip.jpg" theme="Road Trip" listen="103"/>
